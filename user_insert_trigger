@@ -1,7 +1,0 @@
-drop trigger user_insert_trigger;
-create trigger user_insert_trigger AFTER insert on srflow.users_user for each row 
-begin 
-INSERT INTO loonflownew.account_loonuser(id, password, username, dept_id, is_active, email, is_admin,gmt_created, gmt_modified, alias, phone, creator, is_deleted) VALUES (new.id, new.password, new.username, new.dept_id, new.is_active, new.email, new.is_superuser,new.date_joined, new.date_joined,'', '', '', '0');
-end;
-
-
